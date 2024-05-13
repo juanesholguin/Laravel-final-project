@@ -12,7 +12,7 @@
                 <p class="card-text"><strong>Price:</strong> ${{ $book->price }}</p>
                 <p class="card-text"><strong>Category:</strong> {{ $book->category->name }}</p>
                 <p class="card-text"><strong>Published
-                        Date:</strong> {{ $book->published_at ? $book->published_at : 'N/A' }}</p>
+                        Date:</strong> {{ old('published_at', $book->published_at ? \Carbon\Carbon::parse($book->published_at)->format('Y-m-d') : '') }}</p>
                 @if ($book->cover_image)
                     <div class="mb-3">
                         <strong>Cover Image:</strong><br>

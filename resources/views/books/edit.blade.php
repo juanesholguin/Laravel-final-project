@@ -38,7 +38,7 @@
             </div>
             <div class="form-group">
                 <label for="published_at">Published Date</label>
-                <input type="date" class="form-control" id="published_at" name="published_at" value="{{ old('published_at', $book->published_at ? $book->published_at : '') }}">
+                <input type="date" class="form-control" id="published_at" name="published_at" value="{{ old('published_at', $book->published_at ? \Carbon\Carbon::parse($book->published_at)->format('Y-m-d') : '') }}">
             </div>
             <div class="form-group">
                 <label for="category_id">Category</label>
