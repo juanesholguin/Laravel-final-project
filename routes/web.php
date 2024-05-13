@@ -22,7 +22,7 @@ Route::redirect('/home', '/');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth'])->group(function () {
-    Route::resource('/books', BookController::class);
+    Route::resource('/products', BookController::class)->parameter('products', 'book')->names('books');
     Route::resource('/categories', CategoryController::class);
     Route::resource('/users', UserController::class);
 });
