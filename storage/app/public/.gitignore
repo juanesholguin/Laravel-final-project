@@ -1,2 +1,5 @@
 *
 !.gitignore
+!images/
+!images/cover_image/
+!images/cover_image/.gitkeep
