@@ -11,6 +11,7 @@
             <div class="col-12">
                 <div class="col-12">
                     <a href="{{ route('categories.create') }}" class="btn btn-primary">Create new Category</a>
+                    <a href="{{ route('home') }}" class="btn btn-warning">Back to Home</a>
                 </div>
             </div>
         </div>
