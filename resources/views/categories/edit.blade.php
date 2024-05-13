@@ -29,6 +29,17 @@
                 <label for="priority">Priority</label>
                 <input type="number" class="form-control" id="priority" name="priority" value="{{ old('priority', $category->priority) }}" required>
             </div>
+            @if($errors->any())
+                <div class="col-12 mt-2">
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            @endif
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
