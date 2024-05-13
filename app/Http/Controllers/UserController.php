@@ -6,6 +6,8 @@ use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\NewUserCreate;
 
 class UserController extends Controller
 {
@@ -34,6 +36,7 @@ class UserController extends Controller
         $validated = $request->validated();
         $validated["password"] = Hash::make($validated["password"]);
         User::create($validated);
+        Mail::to('juanesholguin80@gmail.com')->send(new NewUserCreate());
         return redirect()->route('users.index');
     }
 
